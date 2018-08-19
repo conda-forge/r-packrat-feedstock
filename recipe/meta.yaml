@@ -1,4 +1,4 @@
-{% set version = "0.4.9" %}
+{% set version = "0.4.9-3" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -13,7 +13,7 @@ source:
     - https://cran.r-project.org/src/contrib/packrat_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/packrat/packrat_{{ version }}.tar.gz
 
-  sha256: fd5c0135d195ef61271b8fb3d4a6792dce0bc54823e14777790d030e602a17d0
+  sha256: 87299938a751defc54eb00a029aecd3522d6349d900aaa8b3e1aa6bf31e98234
 
 build:
   number: 0
