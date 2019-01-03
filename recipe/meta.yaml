@@ -1,5 +1,4 @@
-{% set version = '0.4.9-3' %}
-
+{% set version = '0.5.0' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -8,28 +7,24 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: packrat_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/packrat_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/packrat/packrat_{{ version }}.tar.gz
-  sha256: 87299938a751defc54eb00a029aecd3522d6349d900aaa8b3e1aa6bf31e98234
+  sha256: d6a09290fbe037a6c740921c5dcd70b500e5b36e4713eae4010adf0c456bc5f7
 
 build:
-  noarch: generic
   merge_build_host: True  # [win]
-  number: 1001
-
+  number: 1000
+  noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - {{posix}}zip               # [win]
 
   host:
     - r-base
-
   run:
     - r-base
 
@@ -44,13 +39,28 @@ about:
   summary: Manage the R packages your project depends on in an isolated, portable, and reproducible
     way.
   license_family: GPL2
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
 
 extra:
   recipe-maintainers:
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
+    - conda-forge/r
+
+# Package: packrat
+# Type: Package
+# Title: A Dependency Management System for Projects and their R Package Dependencies
+# Version: 0.5.0
+# Author: Kevin Ushey, Jonathan McPherson, Joe Cheng, Aron Atkins, JJ Allaire
+# Maintainer: Kevin Ushey <kevin@rstudio.com>
+# Description: Manage the R packages your project depends on in an isolated, portable, and reproducible way.
+# License: GPL-2
+# Depends: R (>= 3.0.0)
+# Imports: tools, utils
+# Suggests: testthat (>= 0.7), devtools, httr, knitr, rmarkdown
+# URL: https://github.com/rstudio/packrat/
+# BugReports: https://github.com/rstudio/packrat/issues
+# RoxygenNote: 6.1.1
+# Encoding: UTF-8
+# NeedsCompilation: no
+# Packaged: 2018-11-13 23:16:36 UTC; kevin
+# Repository: CRAN
+# Date/Publication: 2018-11-14 08:40:02 UTC
