@@ -3,7 +3,7 @@ About r-packrat
 
 Home: https://github.com/rstudio/packrat/
 
-Package license: GPL-2
+Package license: GPL-2.0-only
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-packrat-feedstock/blob/master/LICENSE.txt)
 
