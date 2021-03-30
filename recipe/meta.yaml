@@ -1,4 +1,4 @@
-{% set version = '0.5.0' %}
+{% set version = "0.6.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/packrat_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/packrat/packrat_{{ version }}.tar.gz
-  sha256: d6a09290fbe037a6c740921c5dcd70b500e5b36e4713eae4010adf0c456bc5f7
+  sha256: d99d3474baa264cd255a2e60623a1c2a7b30809d352208015c88d992dc169605
 
 build:
-  merge_build_host: True  # [win]
-  number: 1002
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -22,7 +22,7 @@ build:
 
 requirements:
   build:
-
+    - {{ posix }}zip               # [win]
   host:
     - r-base
   run:
@@ -35,11 +35,11 @@ test:
 
 about:
   home: https://github.com/rstudio/packrat/
-  license: GPL-2
-  summary: Manage the R packages your project depends on in an isolated, portable, and reproducible
-    way.
+  license: GPL-2.0-only
+  summary: Manage the R packages your project depends on in an isolated, portable, and reproducible way.
   license_family: GPL2
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
