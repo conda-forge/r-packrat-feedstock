@@ -1,4 +1,4 @@
-{% set version = "0.7.0" %}
+{% set version = "0.8.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/packrat_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/packrat/packrat_{{ version }}.tar.gz
-  sha256: e8bce1fd78f28f3a7bf56e65a2ae2c6802e69bf55466c24e1d1a4b8a5f83dcc2
+  sha256: 3025b9052974bec00fb09299226b80004d48e611e15a65e5a0bc49d3538844ef
 
 build:
   merge_build_host: true  # [win]
