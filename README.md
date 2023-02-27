@@ -1,11 +1,11 @@
-About r-packrat
-===============
+About r-packrat-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-packrat-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/rstudio/packrat/
 
 Package license: GPL-2.0-only
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-packrat-feedstock/blob/main/LICENSE.txt)
 
 Summary: Manage the R packages your project depends on in an isolated, portable, and reproducible way.
 
